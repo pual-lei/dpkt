@@ -411,12 +411,12 @@ class IEEE80211(dpkt.Packet):
             if self.subtype == M_ATIM:
                 return
 
-        try:
-            parser = decoder[self.type][self.subtype][1]
-            name = decoder[self.type][self.subtype][0]
-        except KeyError:
+        #try:
+        parser = decoder[self.type][self.subtype][1]
+        name = decoder[self.type][self.subtype][0]
+        #except KeyError:
             #print("Key error:", self.type, self.subtype)
-            return
+        #    return
 
         if self.type == DATA_TYPE:
             # need to grab the ToDS/FromDS info
