@@ -415,7 +415,7 @@ class IEEE80211(dpkt.Packet):
             parser = decoder[self.type][self.subtype][1]
             name = decoder[self.type][self.subtype][0]
         except KeyError:
-            print("Key error:", self.type, self.subtype)
+            #print("Key error:", self.type, self.subtype)
             return
 
         if self.type == DATA_TYPE:
